@@ -37,5 +37,13 @@ export default defineGkdApp({
         'com.lynx.tasm.behavior.ui.text.FlattenUIText[text="评价并收下金币"]',
       ],
     },
+    {
+      name: '广告返回',
+      key: 4,
+      fastQuery: true,
+      resetMatch: 'app',
+      activityIds: ['com.bytedance.android.sif.container.SifContainerActivity'],
+      rules: ['[id="com.ss.android.ugc.aweme:id/iv_back"]'],
+    },
   ],
 });
