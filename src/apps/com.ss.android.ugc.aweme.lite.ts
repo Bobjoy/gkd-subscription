@@ -10,48 +10,32 @@ export default defineGkdApp({
       fastQuery: true,
       resetMatch: 'app',
       activityIds: ['com.ss.android.excitingvideo.ExcitingVideoActivity'],
-      rules:
+      rules: [
         'com.lynx.tasm.behavior.ui.view.UIView[text^="领取成功"][clickable=true]',
-      // snapshotUrls: [
-      // 	'https://i.gkd.li/snapshot/1751884368172'
-      // ]
-    },
-    {
-      name: '领取奖励',
-      key: 2,
-      fastQuery: true,
-      resetMatch: 'app',
-      activityIds: ['com.ss.android.excitingvideo.ExcitingVideoActivity'],
-      rules: 'com.lynx.tasm.behavior.ui.text.FlattenUIText[text="领取奖励"]',
-      // snapshotUrls: [
-      // 	'https://i.gkd.li/snapshot/1751885498261'
-      // ]
+        'com.lynx.tasm.behavior.ui.text.FlattenUIText[text="领取奖励"]',
+      ],
     },
     {
       name: '退出直播',
-      key: 3,
+      key: 2,
       fastQuery: true,
       resetMatch: 'app',
       activityIds: ['com.ss.android.ugc.aweme.live.LivePlayActivity'],
-      rules:
+      rules: [
         'android.widget.Button[id="com.ss.android.ugc.aweme.lite:id/root"]',
-      // snapshotUrls: [
-      // 	'https://i.gkd.li/snapshot/1751885863727'
-      // ]
+      ],
     },
     {
-      name: '评价并收下金币',
-      key: 4,
+      name: '收下金币',
+      key: 3,
       fastQuery: true,
       resetMatch: 'app',
       activityIds: [
         'com.ss.android.ugc.aweme.bullet.ui.BulletContainerActivity',
       ],
-      rules:
+      rules: [
         'com.lynx.tasm.behavior.ui.text.FlattenUIText[text="评价并收下金币"]',
-      // snapshotUrls: [
-      // 	'https://i.gkd.li/snapshot/1751886080758'
-      // ]
+      ],
     },
   ],
 });
