@@ -11,8 +11,8 @@ export default defineGkdApp({
       resetMatch: 'app',
       activityIds: ['com.ss.android.excitingvideo.ExcitingVideoActivity'],
       rules: [
-        'com.lynx.tasm.behavior.ui.text.FlattenUIText[text^="领取成功"]',
-        'com.lynx.tasm.behavior.ui.text.FlattenUIText[text^="看视频再得"]',
+        'FlattenUIText[text^="领取成功"]',
+        'FlattenUIText[text^="看视频再得"]',
       ],
     },
     {
@@ -22,9 +22,37 @@ export default defineGkdApp({
       resetMatch: 'app',
       activityIds: ['com.ss.android.article.lite.activity.SplashActivity'],
       rules: [
-        '@android.view.ViewGroup < android.view.ViewGroup[text^="看视频领取"]',
-        'com.lynx.tasm.behavior.ui.view.UIView[text^="看视频领"][clickable=true]',
+        '@ViewGroup < ViewGroup[text^="看视频领取"]',
+        'UIView[text^="看视频领"][clickable=true]',
       ],
+    },
+    {
+      name: '阅读领金币1',
+      key: 3,
+      fastQuery: true,
+      resetMatch: 'app',
+      activityIds: [
+        'com.ss.android.article.base.feature.detail2.view.NewDetailActivity',
+      ],
+      rules: ['@View < TextView[text="领金币"]'],
+    },
+    {
+      name: '阅读领金币2',
+      key: 4,
+      fastQuery: true,
+      resetMatch: 'app',
+      activityIds: ['com.bytedance.ugc.innerfeed.impl.PostInnerFeedActivity'],
+      rules: ['FlattenUIText[text="领金币"][clickable=true]'],
+    },
+    {
+      name: '看视频领XXX金币',
+      key: 5,
+      fastQuery: true,
+      resetMatch: 'app',
+      activityIds: [
+        'com.bytedance.common.plugin.base.lynx.popup.ProxyPopupActivity',
+      ],
+      rules: ['UIView[text^="看视频领"] + @LynxFlattenUI'],
     },
   ],
 });

@@ -5,28 +5,23 @@ export default defineGkdApp({
   name: '抖音极速版',
   groups: [
     {
-      name: '领取成功',
+      name: '退出直播',
       key: 1,
       fastQuery: true,
       resetMatch: 'app',
-      activityIds: ['com.ss.android.excitingvideo.ExcitingVideoActivity'],
-      rules: [
-        'com.lynx.tasm.behavior.ui.view.UIView[text^="领取成功"][clickable=true]',
-        'com.lynx.tasm.behavior.ui.text.FlattenUIText[text="领取奖励"]',
-      ],
+      activityIds: ['com.ss.android.ugc.aweme.live.LivePlayActivity'],
+      rules: ['[id="com.ss.android.ugc.aweme.lite:id/root"]'],
     },
     {
-      name: '退出直播',
+      name: '广告返回',
       key: 2,
       fastQuery: true,
       resetMatch: 'app',
-      activityIds: ['com.ss.android.ugc.aweme.live.LivePlayActivity'],
-      rules: [
-        'android.widget.Button[id="com.ss.android.ugc.aweme.lite:id/root"]',
-      ],
+      activityIds: ['com.bytedance.android.sif.container.SifContainerActivity'],
+      rules: ['[vid="iv_back"]'],
     },
     {
-      name: '收下金币',
+      name: '评价并收下金币',
       key: 3,
       fastQuery: true,
       resetMatch: 'app',
@@ -34,16 +29,28 @@ export default defineGkdApp({
         'com.ss.android.ugc.aweme.bullet.ui.BulletContainerActivity',
       ],
       rules: [
-        'com.lynx.tasm.behavior.ui.text.FlattenUIText[text="评价并收下金币"]',
+        'FlattenUIText[text="评价并收下金币"]',
+        'FlattenUIText[text="一键领取"] + @LynxFlattenUI',
       ],
     },
     {
-      name: '广告返回',
+      name: '领取奖励',
       key: 4,
       fastQuery: true,
       resetMatch: 'app',
-      activityIds: ['com.bytedance.android.sif.container.SifContainerActivity'],
-      rules: ['[id="com.ss.android.ugc.aweme:id/iv_back"]'],
+      activityIds: ['com.ss.android.excitingvideo.ExcitingVideoActivity'],
+      rules: [
+        'UIView[text^="领取成功"][clickable=true]',
+        'FlattenUIText[text="领取奖励"]',
+      ],
+    },
+    {
+      name: '立即签到',
+      key: 5,
+      fastQuery: false,
+      resetMatch: 'app',
+      activityIds: ['com.ss.android.ugc.aweme.main.MainActivity'],
+      rules: ['View[text="开宝箱得金币"]'],
     },
   ],
 });

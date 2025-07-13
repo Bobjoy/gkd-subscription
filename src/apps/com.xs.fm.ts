@@ -10,9 +10,7 @@ export default defineGkdApp({
       fastQuery: true,
       resetMatch: 'app',
       activityIds: ['com.ss.android.excitingvideo.ExcitingVideoActivity'],
-      rules: [
-        'com.lynx.tasm.behavior.ui.view.UIView[text^="领取成功"] + @com.lynx.tasm.behavior.ui.LynxFlattenUI',
-      ],
+      rules: ['UIView[text^="领取成功"] + @LynxFlattenUI'],
     },
     {
       name: '看视频领时长',
@@ -21,12 +19,12 @@ export default defineGkdApp({
       resetMatch: 'app',
       activityIds: ['com.dragon.read.pages.main.MainFragmentActivity'],
       rules: [
-        'com.lynx.tasm.behavior.ui.text.FlattenUIText[text^="额外领"]',
-        'com.lynx.tasm.behavior.ui.text.FlattenUIText[text^="领"][text$="金币"]',
-        'com.lynx.tasm.behavior.ui.text.FlattenUIText[text^="看视频再得"]',
-        // 'com.lynx.tasm.behavior.ui.text.FlattenUIText[text="立即领取"]',
-        'com.lynx.tasm.behavior.ui.text.FlattenUIText[text="加倍领取"]',
-        'com.lynx.tasm.behavior.ui.text.FlattenUIText[text="开宝箱得金币"]',
+        'text.FlattenUIText[text^="额外领"]',
+        'text.FlattenUIText[text^="领"][text$="金币"]',
+        'text.FlattenUIText[text^="看视频再得"]',
+        // 'text.FlattenUIText[text="立即领取"]',
+        'text.FlattenUIText[text="加倍领取"]',
+        'text.FlattenUIText[text="开宝箱得金币"]',
       ],
     },
     {
@@ -35,7 +33,7 @@ export default defineGkdApp({
       fastQuery: true,
       resetMatch: 'app',
       activityIds: ['com.dragon.read.plugin.live.LivePlayerActivity'],
-      rules: ['android.widget.Button[id="com.xs.fm:id/n2"]'],
+      rules: ['[id="com.xs.fm:id/n2"]'],
     },
     {
       name: '我知道了',
@@ -44,8 +42,8 @@ export default defineGkdApp({
       resetMatch: 'app',
       activityIds: ['com.dragon.read.reader.speech.bullet.BulletActivity'],
       rules: [
-        'com.lynx.tasm.behavior.ui.text.FlattenUIText[text="我知道了"] + @com.lynx.tasm.ui.image.FlattenUIImage',
-        'com.lynx.tasm.behavior.ui.text.FlattenUIText[text="领取成功"] + @com.lynx.tasm.ui.image.FlattenUIImage',
+        'FlattenUIText[text="我知道了"] + @FlattenUIImage',
+        'FlattenUIText[text="领取成功"] + @FlattenUIImage',
       ],
     },
     {
@@ -54,9 +52,7 @@ export default defineGkdApp({
       fastQuery: true,
       resetMatch: 'app',
       activityIds: ['com.dragon.read.bullet.widget.BulletContainerActivity'],
-      rules: [
-        'com.lynx.tasm.behavior.ui.text.FlattenUIText[text^="看视频最高可领"]',
-      ],
+      rules: ['FlattenUIText[text^="看视频最高可领"]'],
     },
   ],
 });
