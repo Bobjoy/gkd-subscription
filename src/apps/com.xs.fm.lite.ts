@@ -11,7 +11,7 @@ export default defineGkdApp({
       resetMatch: 'app',
       activityIds: ['com.ss.android.excitingvideo.ExcitingVideoActivity'],
       rules: [
-        'UIView[text$="领取成功"][clickable=true] +2 @LynxFlattenUI',
+        'UIView[text$="领取成功"] +2 @LynxFlattenUI',
         'FlattenUIText[text="去逛街继续领取"] + @FlattenUIText[text="退出"]',
         'FlattenUIText[text="再看一个继续领取"]',
       ],
@@ -40,7 +40,7 @@ export default defineGkdApp({
       fastQuery: true,
       resetMatch: 'app',
       activityIds: ['com.dragon.read.plugin.live.LivePlayerActivity'],
-      rules: ['android.widget.Button[id="com.xs.fm:id/n2"]'],
+      rules: ['[vid="n6"]'],
     },
     {
       name: '我知道了',
@@ -52,6 +52,24 @@ export default defineGkdApp({
         'FlattenUIText[text="我知道了"] + @com.lynx.tasm.ui.image.FlattenUIImage',
         'FlattenUIText[text="领取成功"] + @com.lynx.tasm.ui.image.FlattenUIImage',
       ],
+    },
+    {
+      name: '立即签到',
+      key: 5,
+      fastQuery: true,
+      resetMatch: 'app',
+      activityIds: ['com.dragon.read.pages.main.MainFragmentActivity'],
+      rules: ['FlattenUIText[text="收下奖励"]'],
+    },
+    {
+      name: '看视频再领金币',
+      key: 6,
+      fastQuery: true,
+      resetMatch: 'app',
+      activityIds: [
+        'com.bytedance.ug.sdk.luckycat.impl.lynx.LuckyCatLynxActivity',
+      ],
+      rules: ['FlattenUIText[text^="看视频再领"]'],
     },
   ],
 });
