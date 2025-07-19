@@ -12,6 +12,7 @@ export default defineGkdApp({
       activityIds: ['com.ss.android.excitingvideo.ExcitingVideoActivity'],
       rules: [
         'UIView[text$="领取成功"] +2 @LynxFlattenUI',
+        'UIView[text$="领取成功"] +3 @LynxFlattenUI',
         'FlattenUIText[text="去逛街继续领取"] + @FlattenUIText[text="退出"]',
         'FlattenUIText[text="再看一个继续领取"]',
       ],
